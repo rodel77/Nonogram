@@ -1,0 +1,15 @@
+{
+  "name": "nonogram",
+  "version": "1.0.0",
+  "description": "Nonogram game in P5js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/p5": "^0.9.0",
+    "typescript": "^3.8.3"
+  }
+}
