@@ -116,7 +116,6 @@ class Strip {
         }
 
         if(this.allDone()){
-            console.log("Done")
             for(let i = 0; i < this.sequences.length; i ++){
                 if(this.sequences[i].completed==undefined){
                     this.sequences[i].completed = Date.now();
@@ -202,10 +201,12 @@ function createGrid(size: number){
     for(let x = 0; x < size; x++){
         grid[x] = [];
         for(let y = 0; y < size; y++){
-            const io = currentImage.get(x, y)[3]==0xFF;
+            // const io = currentImage.get(x, y)[3]==0xFF;
+            const io = Math.random()<.70;
             grid[x][y] = {
                 io: io,
-                state: (!io && Math.random()<.1) ? States.CROSS : States.NONE,
+                state: (!io && Math.random()<.23) ? States.CROSS : States.NONE,
+                // state: io ? States.CROSS : States.NONE,
                 animationAlpha: 0,
             };
         }
@@ -262,8 +263,6 @@ function draw(){
     rect(panelX, panelY, panelSize, panelSize, 20, 20, 20, 20);
 
     const squareSize = panelSize * .75 / grid.length;
-
-    console.log(touching)
 
     if(touchEnabled){
         var x = panelX+panelSize/2;
